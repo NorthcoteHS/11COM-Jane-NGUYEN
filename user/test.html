@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title> Test</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      
+      
+        <style type="text/css">
+            /* Your CSS goes here */
+            
+            h1 {
+                margin-right : auto;
+                margin-left: auto;
+                display: block;
+                border: none;
+                padding:10px 10px;
+                text-align: center;
+                font-size: 30px;
+                
+            }
+
+            button{
+                margin-right: auto;
+                margin-left: auto;
+                display: block;
+            
+            }
+            
+        </style>
+</head>
+<body>
+     <audio id="myAudio">
+            <source src="Cha_Ching.mp3" type="audio/mpeg">
+       </audio>
+<button onclick="test();"  form="image">
+     <img src="magic-8ball-first-white.jpg"/>
+           </button>
+    <br />
+    <h1> Ask the Magic 8-Ball a question</h1>
+<script>
+    function test() {
+        var values = ["It is certain","It is decidedly so","Without a doubt","Yes definitely","You may rely on it","Yes","Most likely","All signs point to yes","Reply hazy try again","Ask again later","Better not tell you now","Concentrate and ask again","Don't count on it","My reply is no","My sources say no","Outlook not so good","Very doubtful"],
+            valueToUse = values[Math.floor(Math.random() * values.length)];
+        // do something with the selected value
+        alert(valueToUse);
+    
+    }
+ 
+    </script>
+    </body>
+    </html>

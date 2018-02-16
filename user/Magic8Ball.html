@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>YOUR TITLE GOES HERE</title>
+        <title>Magic8Ball</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- Uncomment to use external CSS
@@ -15,14 +15,19 @@
 
     <body>
         <!-- Your HTML goes here -->
-    
-        <button form= "image"  id="myButton" onclick="myFunction()">
+        <audio id="myAudio">
+            <source src="Cha_Ching.mp3" type="audio/mpeg">
+        </audio>
+        <button onclick="test();" form= "image" >
             <img src=magic8ball.jpg/>
+            
+            
         </button>
+        
         <br />
         <h1>Ask the Magic 8-Ball a question</h1>
         <br />
-        <h1 id="h1">Touch the Magic 8-Ball to receive your answer</h1>
+        <div id="line" >Touch the Magic 8-Ball to receive your answer</div>
         
         
         <!-- Uncomment to use external JavaScript
@@ -31,14 +36,21 @@
 
         <script>
             /* Your JS goes here */
-           
-            function myFunction(){
-                alert ("I don't think so")
-            }
-          var 
-            }
             
-         
+           function test(){
+               var values = ['yes','no','I do not think so','definitely','never','of course'];
+               var randomAnswers = Math.floor(Math.random() * values.length);
+              document.getElementById("line").innerHTML =values[randomAnswers];
+               var x= document.getElementById("myAudio")
+               x.play();
+               
+              }
+               
+               
+         // let the respond be the heading
+          
+           
+          
         </script>
     </body>
 </html>
