@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YOUR TITLE GOES HERE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            /* Your CSS goes here */
+        </style>
+    </head>
+
+    <body>
+        <!-- Your HTML goes here -->
+         <button type="button" id="red">Red</button>
+         <button type="button" id="blue">Blue</button>
+         <button type="button" id="green">Green</button>
+          
+         <br />
+        
+         <div id="paint" width="811px" height="1000px">
+  		 <canvas id="myCanvas" width="811px" height="1000px"></canvas>
+	     </div>
+         
+        <br />
+        <button type="button" id="wipe">Wipe</button>
+        <button type="button" id="big dots">Big dots</button>
+        <button type="button" id="small dots">Small dots</button>
+        
+        
+        <!-- Uncomment to use external JavaScript
+        <script src="PATH/TO/EXTERNAL/SCRIPT.JS"></script>
+        -->
+
+    <script>
+       /* Your JS goes here */
+     var canvas = document.getElementById('myCanvas');
+var ctx = canvas.getContext('2d');
+ 
+var painting = document.getElementById('paint');
+var paint_style = getComputedStyle(painting);
+canvas.width = parseInt(paint_style.getPropertyValue('width'));
+canvas.height = parseInt(paint_style.getPropertyValue('height'));
+
+var mouse = {x: 0, y: 0};
+ 
+canvas.addEventListener('mousemove', function(e) {
+  mouse.x = e.pageX - this.offsetLeft;
+  mouse.y = e.pageY - this.offsetTop;
+}, false);
+
+ctx.lineWidth = 3;
+ctx.lineJoin = 'round';
+ctx.lineCap = 'round';
+ctx.strokeStyle = '#000000';
+ 
+canvas.addEventListener('mousedown', function(e) {
+    ctx.beginPath();
+    ctx.moveTo(mouse.x, mouse.y);
+ 
+    canvas.addEventListener('mousemove', onPaint, false);
+}, false);
+ 
+canvas.addEventListener('mouseup', function() {
+    canvas.removeEventListener('mousemove', onPaint, false);
+}, false);
+ 
+var onPaint = function() {
+    ctx.lineTo(mouse.x, mouse.y);
+    ctx.stroke();
+};
+    </script>
+    </body>
+</html>
