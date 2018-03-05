@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Level 2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            /* Your CSS goes here */
+            button{
+                margin-right: auto;
+                margin-left: auto;
+                display: block;
+            }
+            h1 {
+                display: block;
+                text-align: center;
+                margin-right : auto;
+                margin-left: auto;
+                font-size: 30px;
+                border-bottom-color: black;
+                font-family: monospace;
+                    
+            }
+            #line {
+                margin-right : auto;
+                margin-left: auto;
+                display: block;
+                text-align: center;
+                font-size: 20px;
+                font-family: inherit;
+              
+            }
+            
+
+            #congrats {
+                display: none;
+                margin-right : auto;
+                margin-left: auto;
+                text-align: center;
+                height: 500px;
+                width: 500px;
+            
+            }
+            #next{
+                display: none;
+                margin-right : auto;
+                margin-left: auto;
+                text-align: center;
+                height: 30px;
+                width: 200px;
+                font-size: 20px;
+            }
+            #again{
+                display: none;
+                margin-right : auto;
+                margin-left: auto;
+                text-align: center;
+                height: 500px;
+                width: 500px;
+            
+            }
+        </style>
+    </head>
+
+    <body style="background-color: chocolate">
+        <!-- Your HTML goes here -->
+         
+        <!-- Your HTML goes here -->
+        <button onclick="Plane();" form= "image" >
+            <img src="plane.png" height="300" width="400"/>
+        </button>
+        
+        <br />
+        <a href="PoliceCar.html"><button id="next" height="50" width="50">Next level</button></a>
+        <h1>What is this?</h1> 
+        <p id="line">Touch the image to answer</p>
+        <div id="congrats">
+            <img src="../congrats.gif">
+        </div>
+        <div id="again">
+            <img src="../try%20again.gif">
+        </div>
+        <!-- Uncomment to use external JavaScript
+        <script src="PATH/TO/EXTERNAL/SCRIPT.JS"></script>
+        -->
+
+        <script>
+            /* Your JS goes here */
+               
+            function Plane(){
+          
+                var question = prompt("Please enter your answer:", "Type here");
+                 
+                if (question == "Plane" || question == "PLANE" || question == "AIRPLANE" ||question == "plane" || question == "airplane"  ) {
+                    alert("Correct answer!!! Good job");  
+                    congrats.style.display="block";
+                    next.style.display="block";
+                    again.style.display="none";
+                 
+                }
+               else if (question == "" || question == "Type here" || question == null)  {
+                
+                    alert("You have not typed your answer");
+                }
+                
+               else { 
+                    alert("Not quite, let's try again!!!");
+                    again.style.display="block";
+                    congrats.style.display="none";
+                    next.style.display="none";
+                    
+                    
+                }
+               
+            }
+        </script>
+    </body>
+</html>
