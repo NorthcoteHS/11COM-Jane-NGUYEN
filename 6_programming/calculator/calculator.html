@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            /* Your CSS goes here */
+            h1 {
+                color: black;
+                margin-right : auto;
+                margin-left: auto;
+                display: block;
+                border: none;
+                padding:10px 10px;
+                text-align: center;
+                font-size: 30px;
+                background-color: burlywood;
+            }
+
+            select,button{
+                margin-right: auto;
+                margin-left: auto;
+                display: block;
+                font-size : 20px;
+            }
+            p {
+                margin-right : auto;
+                margin-left: auto;
+                display: block;
+                text-align: center;
+                font-size: 20px;
+                font-family: inherit;
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Your HTML goes here -->
+        <h1> CALCULATOR</h1>
+        <p id="line"> Please type in the 2 numbers that you want to calculate in these 2 boxes - when using decimals, please use (.) instead of (,)</p>
+        <p>First number:<input type="text" id="number_1">Second number:<input type="text" id="number_2"></p>
+        <br \>
+        <p>Square root calculation:<input type="text" id="number_3"></p>
+        <br \>
+        <p>Power:<input type="text" id="number_4"> to the power of <input type="text" id="number_5"></p>
+        <select id="operators">
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="division">/</option>
+            <option value="multiple">x</option>
+            <option value="root">square root</option>
+            <option value="power">to the power of</option>
+        </select>
+        <br \>
+        <button onclick="myButton();">Calculate it for me!</button>
+        <br \>
+        <p> The answer is:<input type="text" id="result"></p>
+        <!-- Uncomment to use external JavaScript
+        <script src="PATH/TO/EXTERNAL/SCRIPT.JS"></script>
+        -->
+
+        <script>
+            /* Your JS goes here */
+            function myButton() {
+                var n1 = parseFloat(document.getElementById("number_1").value);
+                var n2 = parseFloat(document.getElementById("number_2").value);
+                var n3 = parseFloat(document.getElementById("number_3").value);
+                var n4 = parseFloat(document.getElementById("number_4").value);
+                var n5 = parseFloat(document.getElementById("number_5").value);
+                var oper = document.getElementById("operators").value;
+
+             if(oper == "plus")
+                {
+                  document.getElementById("result").value = n1+n2;
+                }
+             if(oper == "minus")
+                {
+                  document.getElementById("result").value = n1-n2;
+                }
+             if(oper == "division")
+                {
+                  document.getElementById("result").value = n1/n2;
+                }
+             if(oper == "multiple")
+                {
+                  document.getElementById("result").value = n1*n2;
+                }
+             if(oper == "root")
+                {
+                  document.getElementById("result").value = Math.sqrt(n3);
+                 }
+             if(oper == "power")
+                {
+                  document.getElementById("result").value = Math.pow(n4,n5);
+                 }
+            }
+        </script>
+    </body>
+</html>
